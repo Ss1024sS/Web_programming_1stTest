@@ -1,0 +1,61 @@
+body {
+    background-color: bisque;
+    padding: 0px;
+    font-family: Helvetica;
+    overflow: hidden;
+}
+
+.header {
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 2em;
+    font-family: 'Courier New', monospace;
+    z-index: 1;
+}
+
+.album-container {
+    display: flex;
+    justify-content: space-around; 
+    align-items: center;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%; 
+    height: 50%; 
+    z-index: -1;
+}
+
+.album {
+    width: 30%; 
+    height: 100%;
+    opacity: 80%;
+    background-size: cover;
+    background-position: center;
+    transition: opacity 1s ease-in-out, background-image 1s ease-in-out;
+}
+
+
+.emoji-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+}
+
+.emoji-button {
+    font-size: 40px;
+    text-decoration: none;
+    cursor: pointer;
+    margin: 5px;
+    transition: transform 0.3s ease;
+    position: absolute;
+}
+
+.emoji-button:hover {
+    transform: scale(1.5);
+}
