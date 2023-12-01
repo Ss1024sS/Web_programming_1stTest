@@ -43,9 +43,17 @@ function positionEmojisRandomly() {
     const containerRect = container.getBoundingClientRect();
 
     for (let emoji of emojis) {
-        const x = Math.random() * containerRect.width;
-        const y = Math.random() * containerRect.height;
-        emoji.style.left = x + 'px';
-        emoji.style.top = y + 'px';
+        const maxX = containerRect.width - emoji.offsetWidth;
+        const maxY = containerRect.height - emoji.offsetHeight;
+
+        const x = Math.random() * maxX;
+        const y = Math.random() * maxY;
+
+        emoji.style.left = `${x}px`;
+        emoji.style.top = `${y}px`;
     }
 }
+
+window.addEventListener('resize', positionEmojisRandomly);
+
+document.addEventListener('DOMContentLoaded', positionEmojisRandomly);
